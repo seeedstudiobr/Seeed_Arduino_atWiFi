@@ -7,9 +7,16 @@ on:
     branches: [ master ]
 
 jobs:
-
+      
   build:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        board: [arduino:avr:uno, Seeeduino:samd:seeed_XIAO_m0]
+
     steps:
       - uses: actions/checkout@v2
-      - uses: arduino/setup-arduino-cli@v1.0.0
+      - uses: arduino/actions/libraries/compile-examples@master
+        with:
+          fqbn: ${{ matrix.board }}
