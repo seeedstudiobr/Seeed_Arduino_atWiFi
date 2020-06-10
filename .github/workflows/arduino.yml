@@ -13,7 +13,9 @@ jobs:
 
     strategy:
       matrix:
-        board: ['arduino:avr:uno', 'Seeeduino:samd:seeed_XIAO_m0']
+        board:
+          - 'arduino:avr:uno'
+          - '"Seeeduino:samd:seeed_XIAO_m0" "http://files.seeedstudio.com/arduino/package_seeeduino_boards_index.json"'
 
     steps:
       - uses: actions/checkout@v2
