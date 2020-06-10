@@ -13,10 +13,10 @@ jobs:
 
     strategy:
       matrix:
-        board: [arduino:avr:uno, Seeeduino:samd:seeed_XIAO_m0]
+        board: ['arduino:avr:uno', 'Seeeduino:samd:seeed_XIAO_m0']
 
     steps:
       - uses: actions/checkout@v2
       - uses: arduino/actions/libraries/compile-examples@master
         with:
-          fqbn: '${{ matrix.board }}'
+          fqbn: ${{ matrix.board }}
