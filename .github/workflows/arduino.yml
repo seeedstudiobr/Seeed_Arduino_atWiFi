@@ -22,3 +22,11 @@ jobs:
       - uses: arduino/actions/libraries/compile-examples@master
         with:
           fqbn: ${{ matrix.board }}
+          libraries: |
+            - source_url: https://github.com/Seeed-Studio/Seeed_Arduino_atWiFi.git
+            - source_url: https://github.com/Seeed-Studio/Seeed_Arduino_FreeRTOS.git
+            - source_url: https://github.com/Seeed-Studio/esp-at-lib.git
+            - source_url: https://github.com/Seeed-Studio/Seeed_Arduino_atUnified.git
+            - source_url: https://github.com/Seeed-Studio/Seeed_Arduino_mbedtls.git
+            - source_url: https://github.com/Seeed-Studio/Seeed_Arduino_atWiFiClientSecure.git
+            - source_url: https://github.com/Seeed-Studio/Seeed_Arduino_atHTTPClient.git
